@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetFax</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Available Pets for Adoption</h1>
+    <ul>
+        {% for pet in pets %}
+            <li><a href="{{ url_for('show_pet', index=loop.index0) }}">{{ pet.name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
